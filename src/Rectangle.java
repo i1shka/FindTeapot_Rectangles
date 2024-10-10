@@ -13,7 +13,8 @@ public class Rectangle {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rectangle rectangle = (Rectangle) o;
-        return Double.compare(width, rectangle.width) == 0 && Double.compare(length, rectangle.length) == 0;
+        return Double.compare(width,  rectangle.width) == 0 && Double.compare(length, rectangle.length) == 0 ||
+               Double.compare(length, rectangle.width) == 0 && Double.compare(width,  rectangle.length) == 0 ;
     }
 
     @Override

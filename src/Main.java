@@ -4,15 +4,32 @@ import java.util.Objects;
 public class Main {
     public static void main(String[] args) {
         exampleArrayTeapots1();
-        exampleArrayRectangles2();
+        exampleArrayRectangles1();
+        exampleArrayTeapots2();
+
     }
 
-    private static void exampleArrayRectangles2() {
+    private static void exampleArrayTeapots2() {
+        Teapot[] array = new Teapot[]{  new Teapot(1, "blue"),
+                new Teapot(1.1, "white"),
+                new Teapot(2.5, "white"),
+                new Teapot(3, "green")
+        };
+
+        Teapot toFind = new Teapot(2.5, "white");
+
+        int k3 = Arrays.stream(array).toList().indexOf(toFind);
+        System.out.println("k3 = " + k3);
+
+
+    }
+
+    private static void exampleArrayRectangles1() {
         Rectangle[] array2 = new Rectangle[]{new Rectangle(10, 15),
                                              new Rectangle(25, 25),
                                              new Rectangle(16, 20),
                                              new Rectangle(15, 10)};  
-        Rectangle toFind = new Rectangle(20, 16);
+        Rectangle toFind = new Rectangle(10, 15);
         
         int kr = findRectangle(array2, toFind);
         System.out.println("kr = " + kr);
@@ -20,9 +37,9 @@ public class Main {
 
     private static void exampleArrayTeapots1() {
         Teapot[] array = new Teapot[]{  new Teapot(1, "blue"),
-                                        new Teapot(1.1, "white"),
-                                        new Teapot(2.5, "white"),
-                                        new Teapot(3, "green")
+                new Teapot(1.1, "white"),
+                new Teapot(2.5, "white"),
+                new Teapot(3, "green")
         };
 
         Teapot toFind = new Teapot(2.5, "white");
