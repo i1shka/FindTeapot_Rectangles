@@ -22,6 +22,8 @@ public class Main {
         System.out.println("k3 = " + k3);
 
 
+        int kolvo = (int) Arrays.stream(array).distinct().count();
+        System.out.println("kolvo = " + kolvo);
     }
 
     private static void exampleArrayRectangles1() {
@@ -76,5 +78,21 @@ public class Main {
             i++;
         }
         return -1;
+    }
+    
+    public static int countDistinctTeapots(Teapot[] array){
+        int result=0;
+        for (int i =0; i<array.length; i++){
+            boolean isUnique= true;
+            for (int j = i+1; j < array.length; j++) {
+                if(array[i].equals(array[j])){
+                    isUnique = false;
+                    break;
+                }                    
+            }
+            if(isUnique)
+                result++;
+        }
+        return result;
     }
 }
