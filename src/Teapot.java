@@ -9,6 +9,13 @@ public class Teapot {
         this.color = color;
     }
 
+    public boolean equalsColor(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Teapot teapot = (Teapot) o;
+        return Objects.equals(color, teapot.color);
+    }
+
     @Override
     public String toString() {
         return "Teapot{" +
